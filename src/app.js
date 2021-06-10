@@ -58,11 +58,13 @@ app.get('/weather', (req, res) => {
           error,
         });
       }
-      const { temperature, weather_descriptions: desc } = wedata;
+      const { temperature, weather_descriptions: desc,feelslike,humidity } = wedata;
       res.send({
         temperature,
         desc,
         address: req.query.address,
+        feelslike,
+        humidity
       });
     });
   });
